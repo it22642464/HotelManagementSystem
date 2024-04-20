@@ -1,0 +1,70 @@
+
+.feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    padding: 10px;
+}
+
+
+/* .card {
+    width: 48%; 
+    margin-bottom: 15px;
+    margin-right: 2%; 
+    padding: 15px; 
+    border: 1px solid #989797; 
+    border-radius: 8px; 
+    background-color: #f1f5f7; 
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); 
+} */
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between; 
+    font-weight: bold; 
+}
+
+
+.card-body {
+    margin-top: 10px; 
+}
+
+
+
+
+.rating {
+    display: flex;
+    justify-content: space-between; 
+    
+
+}
+.star {
+    font-size: 1.5rem; 
+    margin-right: 2px; 
+    color: gold; 
+}
+
+h2{
+    text-align: center;
+    
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Add spacing between cards */
+    justify-content: center; /* Center-align the cards */
+}
+
+/* Card styling */
+.card {
+    flex: 0 0 48%; /* Allow cards to take up 48% width, so two fit side by side */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Add margin below each card */
+    padding: 15px; /* Add padding inside each card */
+    border: 1px solid #ccc; /* Add a light border */
+    border-radius: 8px; /* Add rounded corners */
+    background-color: #f9f9f9; /* Set a light background color */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}

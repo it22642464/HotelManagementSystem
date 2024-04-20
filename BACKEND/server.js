@@ -4,8 +4,8 @@ const bodyParser = require("body-parser");
 const cors = require ("cors");
 const dotenv = require ("dotenv");
 const app = express();
-//const feedbackRoutes = require('./routes/feedbacks');
-//const Feedback = require('./models/Feedback');
+const feedbackRoutes = require('./routes/feedbacks');
+const Feedback = require('./models/Feedback');
 
 require("dotenv").config();
 
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 8070;
 
 app. use(cors());
 app.use(bodyParser.json());
-app.use('/feedbacks', feedbackRoutes);
+app.use('/feedbacks',feedbackRoutes);
 
 
 const URL = process.env.MONGODB_URL;

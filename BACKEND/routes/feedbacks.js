@@ -23,6 +23,7 @@ router.route('/add').post((req, res) => {
     const newFeedback = new Feedback({
       _id: new ObjectId(),
         name,
+        date: new Date(),
         email,
         duration,
         howDidYouHear,
@@ -33,7 +34,6 @@ router.route('/add').post((req, res) => {
         suggestions,
         rating
     });
-    console.log('New Feedback:', newFeedback);
     newFeedback.save()
         .then(() => res.json(newFeedback))
         .catch(err => {
@@ -44,9 +44,9 @@ router.route('/add').post((req, res) => {
 
 
 router.route("/").get((req, res) => {
-  console.log("sssssssssssssssssssssssssssssssssssssssssssss")
     Feedback.find().then((feedbacks) => {
         res.json(feedbacks);
+      console.log("sssssssssssssssssssssssssss"+feedbacks)
     }).catch((err) => {
         console.log(err);
         res.status(500).send("Error fetching Feedback");

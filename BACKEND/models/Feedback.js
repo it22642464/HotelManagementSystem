@@ -9,6 +9,9 @@ const feedbackSchema = new Schema({
         type: String,
         required: true
     },
+    date:{
+        type: Date,
+    },
     email: {
         type: String,
         required: true
