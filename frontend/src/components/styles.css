@@ -1,0 +1,266 @@
+/* styles.css */
+.form-container {
+  background-color: #f0f8ff; /* Light blue */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto; /* Center the form container horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the form container vertically */
+}
+
+.table-container {
+  font-family: Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #b8b0b0;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+  h2 {
+    text-align: center; /* Centers the heading */
+    margin-bottom: 20px; 
+    font-weight: bold; /* Make the heading bold */
+    color: #0cad1c;
+
+  
+  
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form div {
+  margin-bottom: 5px;
+  margin-top: 1px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+.feedback-input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #73cdb8;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  width: 550px;
+  height: 80px;
+}
+
+button[type='submit'] {
+  
+  background-color: #26c58b; /* Green */
+  color: rgb(231, 225, 225);
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 250px;
+  margin: 0 auto; 
+    display: block;
+}
+
+button[type='submit']:hover {
+  background-color: #03AC13;
+}
+
+#responseMessage {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+}
+
+
+/* Container styling */
+.feedback-view-container {
+  background-color: #f0f8ff;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Title styling */
+.feedback-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Feedback details styling */
+.feedback-details {
+  margin-bottom: 20px;
+}
+
+.feedback-item {
+  margin-bottom: 10px;
+}
+
+.feedback-label {
+  font-weight: bold;
+  color: #555;
+  margin-right: 5px;
+}
+
+.feedback-textarea {
+  resize: vertical;
+  width: 550px;
+  height: 80px;
+}
+
+/* Button styling */
+.feedback-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.feedback-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Feedback view container */
+.feedback-view-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f0f8ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback title */
+.feedback-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0cad1c;
+}
+
+/* Feedback details */
+.feedback-details {
+  margin-bottom: 20px;
+}
+
+/* Feedback item */
+.feedback-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Feedback label */
+.feedback-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #555;
+}
+
+/* Overall rating star */
+.feedback-item .feedback-label:after {
+  content: '•';
+
+  color: gold;
+  margin-left: 15px;
+}
+
+/* Feedback actions container */
+.feedback-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Feedback buttons */
+.feedback-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-button.update-button {
+  background-color: #007bff;
+  color: white;
+  width: 100px;
+  height: 40px;
+}
+
+.feedback-button.update-button:hover {
+  background-color: #0056b3;
+}
+
+.feedback-button.delete-button {
+  background-color: #f43a4d;
+  color: white;
+  width: 100px;
+  height: 40px;
+}
+
+.feedback-button.delete-button:hover {
+  background-color: #b21020;
+}
+
+
+.star-rating {
+  display: flex;
+}
+
+.star {
+  font-size: 2rem; /* Adjust the size of the stars as needed */
+  color: gray; /* Color of unselected stars */
+  cursor: pointer;
+  margin: 0 3px; /* Add spacing between stars */
+  transition: color 0.1s;
+}
+
+.star.filled {
+  color: gold; /* Color of selected stars */
+}
+
