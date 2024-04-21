@@ -59,7 +59,7 @@ function FeedbackForm() {
    
     <div className="form-container">
             <h2>Feedback Form</h2>
-            <p1> Hotel Elephant Bay</p1>
+          
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Name:</label>
@@ -127,7 +127,6 @@ function FeedbackForm() {
                     <label>Overall Rating:</label>
                     <StarRating rating={formData.rating} onChange={handleRatingChange} />
                 </div>
-
                 <div>
                     <label>Any Suggestions:</label>
                     <textarea name="suggestions" value={formData.suggestion} onChange={handleChange} rows="4"></textarea>

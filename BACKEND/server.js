@@ -5,7 +5,8 @@ const cors = require ("cors");
 const dotenv = require ("dotenv");
 const app = express();
 const feedbackRoutes = require('./routes/feedbacks');
-const Feedback = require('./models/Feedback');
+const contactRoutes = require('./routes/contactRoute');
+
 
 require("dotenv").config();
 
@@ -13,7 +14,8 @@ const PORT = process.env.PORT || 8070;
 
 app. use(cors());
 app.use(bodyParser.json());
-app.use('/feedbacks',feedbackRoutes);
+app.use('/feedback',feedbackRoutes);
+app.use('/contacts',contactRoutes);
 
 
 const URL = process.env.MONGODB_URL;
@@ -32,9 +34,6 @@ connection .once("open",()=>{
   console.log("Mongodb Connection success!");
 })
 
-
-const StudentsRouter =require ("./routes/feedbacks.js");
-app.use("/feedback",StudentsRouter);
 
 app.listen(PORT, ()=> {
     console.log ('Server is up and running on port number: ${PORT}')

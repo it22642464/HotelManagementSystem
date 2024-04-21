@@ -36,18 +36,20 @@
 .rating {
     display: flex;
     justify-content: space-between; 
-    
+   
 
 }
-.star {
-    font-size: 1.5rem; 
-    margin-right: 2px; 
-    color: gold; 
+.rating-stars{
+
+ color: gold;
 }
 
-h2{
-    text-align: center;
-    
+
+.head{
+    text-align: center; /* Centers the heading */
+    margin-bottom: 20px; 
+    font-weight: bold; /* Make the heading bold */
+    color: #1d9a27;
 }
 
 .card-container {

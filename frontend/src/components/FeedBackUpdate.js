@@ -51,7 +51,7 @@ function FeedbackView() {
             console.log('Feedback updated successfully!', response.data);
             //setFormData(response.data);
             setFeedback(response.data); 
-            navigate(`/feedback/view/${id}`);
+            navigate(`/feedback`);
         } catch (error) {
             console.error("Error updating feedback:", error);
         }
@@ -68,23 +68,10 @@ function FeedbackView() {
 
     return (
         
-        // <div>
-        //     <h2>Feedback Details</h2>
-        //     <p>Name: {feedback.name}</p>
-        //     <p>Email: {feedback.email}</p>
-        //     <p>Duration of Stay: {feedback.duration}</p>
-        //     <p>How Did You Hear About Our Hotel: {feedback.howDidYouHear}</p>
-        //     <p>Quality Rating: {feedback.quality}</p>
-        //     <p>Cleanliness Rating: {feedback.cleanliness}</p>
-        //     <p>Food Rating: {feedback.food}</p>
-        //     <p>Staff Rating: {feedback.staff}</p>
-        //     <p>Suggestions: {feedback.suggestions}</p>
-        //     /<button onClick={handleSubmit}>Update Feedback</button>
-        // </div>
-        //  return (
+     
    
             <div className="form-container">
-              <h2>Update Form</h2>
+              <h2>Edit Feedback Form</h2>
               <form onSubmit={handleSubmit}>
                 <div>
                   <label>Name:</label>
@@ -306,7 +293,7 @@ function FeedbackView() {
                   <label>Any Suggestions:</label>
                   <textarea name="suggestions" value={formData.suggestions} onChange={handleChange} rows="4"></textarea>
                 </div>
-                <button type="submit" >update Feedback</button>
+                <button type="submit" >Edit Feedback</button>
               </form>
               <div id="responseMessage" style={{ display: 'none' }}></div>
             </div>

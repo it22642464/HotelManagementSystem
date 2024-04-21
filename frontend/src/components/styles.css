@@ -42,9 +42,9 @@ label {
 }
 
   h2 {
-    text-align: center; /* Centers the heading */
+    text-align: center; 
     margin-bottom: 20px; 
-    font-weight: bold; /* Make the heading bold */
+    font-weight: bold; 
     color: #0cad1c;
 
   
@@ -177,8 +177,9 @@ button[type='submit']:hover {
 .feedback-title {
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #0cad1c;
+  text-align: center;
 }
 
 /* Feedback details */
@@ -254,7 +255,7 @@ button[type='submit']:hover {
 
 .star {
   font-size: 2rem; /* Adjust the size of the stars as needed */
-  color: gray; /* Color of unselected stars */
+ /* Color of unselected stars */
   cursor: pointer;
   margin: 0 3px; /* Add spacing between stars */
   transition: color 0.1s;
@@ -263,4 +264,14 @@ button[type='submit']:hover {
 .star.filled {
   color: gold; /* Color of selected stars */
 }
-
+.allhead{
+  font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #0cad1c;
+    text-align: center;
+}
+.hotel{
+  font-size: 30px;
+  color: #0cad1c
+}

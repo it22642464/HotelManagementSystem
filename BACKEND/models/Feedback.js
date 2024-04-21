@@ -1,7 +1,6 @@
 // models/Feedback.js
 
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 const feedbackSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId, 
@@ -44,10 +43,10 @@ const feedbackSchema = new Schema({
         type: String
     },
     rating: {
-        type: Number, // Add a new field for the rating
+        type: Number, 
         required: true,
-        min: 1, // Minimum value of 1
-        max: 5  // Maximum value of 5
+        min: 1, 
+        max: 5  
     }
 }
 );

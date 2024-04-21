@@ -76,7 +76,10 @@ function FeedbackList() {
             <p>No feedbacks found.</p>
         ) : (
             <div className="feedback-container">
-            <h2>All Feedbacks</h2>
+                 <h3 className="allhead">All Feedbacks</h3>
+
+               
+           
             {feedbacks.length === 0 ? (
                 <p>No feedbacks found.</p>
             ) : (
@@ -87,9 +90,9 @@ function FeedbackList() {
                         return (
                             <div className="card" key={id}>
                                 <div className="card-header row">
-                                    <div className="name col-6">{name}</div>
+                                    <div className="name col-8">{name}</div>
                                     
-                                    <div className="date col-6">{generateDate(date)}</div>
+                                    <div className="date col-4">{generateDate(date)}</div>
                                 </div>
                                 <div className="card-body col">
                                     <div><p>{suggestions}</p></div>
