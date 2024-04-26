@@ -61,6 +61,9 @@ function FeedbackView() {
             console.error("Error deleting feedback:", error);
         }
     };
+    const handleOk = () => {
+        navigate('/feedback'); // Navigate to FeedbackList page when OK button is clicked
+    };
 
     if (loading) {
         return <div>Loading...</div>;
@@ -115,6 +118,9 @@ function FeedbackView() {
             <button className="feedback-button delete-button" onClick={handleDeleteFeedback}>
                 Delete 
             </button>
+            <button className="feedback-button ok-button" onClick={handleOk}>
+                    OK
+                </button>
         </div>
     </div>
        

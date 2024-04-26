@@ -10,6 +10,10 @@ import FeedbackList from './components/FeedbackList';
 import ContactAddForm from './components/contacts/ContactAddFrom';
 import ContactVeiw from './components/contacts/ContactVeiw';
 
+import FilteredFeedback from './components/FilteredFeedback';
+
+
+
 function App() {
   return (
     <Router>
@@ -19,6 +23,7 @@ function App() {
         <Route path="/feedback/:id" element={<FeedbackView />} />
         <Route path="/feedback/update/:id" element={<FeedBackUpdate/>}/>
         <Route path="/feedback" element={<FeedbackList />} />
+        <Route path="/FilteredFeedback" element={<FilteredFeedback />} />
         <Route path="/contact" element={<ContactAddForm/> }/>
         <Route path="/contact/veiw" element={<ContactVeiw/>}/>
 

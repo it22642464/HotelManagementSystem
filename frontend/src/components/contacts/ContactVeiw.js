@@ -10,7 +10,7 @@ function ContactVeiw(){
  const [con, setCon] = useState(null);
  useEffect(() => {
   
-    const fetchContacts = async() =>{
+const fetchContacts = async() =>{
   try{
     const response = await axios.get('http://localhost:8070/contacts/');
     setContacts(response.data);
@@ -23,9 +23,9 @@ function ContactVeiw(){
 }    
     };
     fetchContacts();
-
  },[])
 
+ 
  const deleteContact =(id)=>{
     setContacts((prevContacts) => prevContacts.filter((con) => con._id !== id));
  }

@@ -23,7 +23,7 @@ function FeedbackView() {
     useEffect(() => {
         const fetchFeedback = async () => {
             try {
-                console.log('ID:', id); // Log the id parameter
+                console.log('ID:', id);
                 if (!id) {
                     throw new Error('ID parameter is missing');
                 }
@@ -57,6 +57,7 @@ function FeedbackView() {
         }
     };
 
+    
 
     if (loading) {
         return <div>Loading...</div>;

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './freedBackList.css';
-import { useNavigate } from 'react-router-dom';
 
-function FeedbackList() {
+function FilteredFeedbackList() {
     const [feedbacks, setFeedbacks] = useState([]);
-    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
-    const [searchDate, setSearchDate] = useState('');
 
     useEffect(() => {
+        // Fetch all feedbacks from the backend
         const fetchFeedbacks = async () => {
             try {
                 const response = await axios.get('http://localhost:8070/feedback/');
@@ -24,14 +22,17 @@ function FeedbackList() {
         fetchFeedbacks();
     }, []);
 
-    const handleSearchDateChange = (e) => {
-        setSearchDate(e.target.value);
-    };
+    // Filter feedbacks with 4 or 5 stars ratings
+    const filteredFeedbacks = feedbacks.filter(feedback => {
+        const rating = feedback.rating;
+        return rating === 4 || rating === 5;
+    });
 
-    const filteredFeedbacks = searchDate
-        ? feedbacks.filter(feedback => new Date(feedback.date).toISOString().split('T')[0] === searchDate)
-        : feedbacks;
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
+    // Function to generate stars for the rating
     const generateStars = (rating) => {
         const stars = [];
         for (let i = 0; i < rating; i++) {
@@ -40,29 +41,20 @@ function FeedbackList() {
         return stars;
     };
 
-   
-    
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // Function to format date to 'YYYY-MM-DD' format
+    const formatDate = (date) => {
+        const dateObj = new Date(date);
+        return dateObj.toISOString().split('T')[0];
+    };
 
     return (
         <div className="feedback-container">
-            <h3 className="allhead">All Feedbacks</h3>
+            <h3 className="allhead">Feedbacks with Ratings 4 and 5 Stars</h3>
 
-            <div className="search-container">
-                <label htmlFor="search-date">Search by Date:</label>
-                <input
-                    type="date"
-                    id="search-date"
-                    value={searchDate}
-                    onChange={handleSearchDateChange}
-                />
-            </div>
-
+            {/* Display filtered feedbacks */}
             <div className="card-container">
                 {filteredFeedbacks.length === 0 ? (
-                    <p>No feedbacks found for the selected date.</p>
+                    <p>No feedbacks found with 4 or 5 stars ratings.</p>
                 ) : (
                     filteredFeedbacks.map((feedback) => {
                         const { id, name, date, suggestions, rating } = feedback;
@@ -71,21 +63,18 @@ function FeedbackList() {
                             <div className="card" key={id}>
                                 <div className="card-header row">
                                     <div className="name col-8">{name}</div>
-                                    <div className="date col-4">{new Date(date).toLocaleDateString()}</div>
+                                    <div className="date col-4">{formatDate(date)}</div>
                                 </div>
                                 <div className="card-body col">
                                     <div><p>{suggestions}</p></div>
                                     <div className="rating row">
                                         <div className="overall col-6">
-                                            <span>Overall Rating:</span>
+                                            <span>Overall Rating</span>
                                         </div>
                                         <div className="rating-stars col-6">
                                             {generateStars(rating)}
                                         </div>
                                     </div>
-                                </div>
-                                <div className="card-footer">
-                                   
                                 </div>
                             </div>
                         );
@@ -96,5 +85,4 @@ function FeedbackList() {
     );
 }
 
-export default FeedbackList;
-//btn delete-btn
+export default FilteredFeedbackList;
